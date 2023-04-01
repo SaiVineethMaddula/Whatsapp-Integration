@@ -1,0 +1,32 @@
+<template>
+
+    <div>
+        <div style="background-color: #075e54;">
+            <p style="font-size: 24pt; font-weight: bold; color: white; margin-left: 2%;">Whatsapp In Salesforce</p>
+        </div>
+        <div class="slds-box" style="background-color: #ece5dd;">
+            <div style="background-color: #fdeec8; border-radius: 5%; width:fit-content; padding-top: 0.5%; padding-bottom: 0.5%; padding-left: 1%; padding-right: 1%;" class="slds-align_absolute-center">
+                Last 30 days chat history available
+            </div>
+            <div style="max-height: 350px; background-color: #ece5dd; margin-bottom: 1%" class="slds-scrollable" ref={scrollableDiv}>
+                <template if:true={render}>
+                    <template for:each={allConvo} for:item="eachConvo" for:index="index">
+                            <div key={eachConvo.Id} class="slds-box" style="padding: 5px; margin: 5px; max-width: 60%; width: fit-content; overflow-wrap: break-word; background-color: #ffffff; position: relative;" data-type={eachConvo.Send_Receive__c}>
+                                <p data-id={eachConvo.Send_Receive__c}>{eachConvo.Reaction__c}</p>
+                                {eachConvo.Message__c}
+                            </div>
+                    </template>
+                </template>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <lightning-input type="text" variant="label-hidden" onchange={handleMessageOnchange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-align_absolute-center">
+                    <lightning-button-icon variant="border-filled" size="medium" icon-name="utility:send" onclick={handleSendMessage}></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</template>
