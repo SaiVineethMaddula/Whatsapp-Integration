@@ -26,10 +26,10 @@ Lets get Started!!
       - @HTTPPOST - To receive all the messages and reactions sent from the client/customer and handle the received messages.
 3. LWC component "whatsappIntegrationLWC" - HTML, JS & CSS files with same name to handle the UI
 
-# Note: There are two other things that I can't add files for.
-#       1. Salesforce Custom Object "Whatsapp_Conversation__c" to store the conversation history
-#       2. Platform Event "whatsappreceivedmessage__e" to refresh and display the message on screen
-#       3. Custom Field in Contact Object "Whatsapp__c" to store the whatsapp number with country code
+Note: There are two other things that I can't add files for.
+      1. Salesforce Custom Object "Whatsapp_Conversation__c" to store the conversation history
+      2. Platform Event "whatsappreceivedmessage__e" to refresh and display the message on screen
+      3. Custom Field in Contact Object "Whatsapp__c" to store the whatsapp number with country code
 
 
 
